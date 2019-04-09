@@ -1,0 +1,1083 @@
+/* Import Noto Sans for congruency between English and Japanese fonts */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Josefin+Sans|PT+Sans');
+
+/* search for sections via ##{sectionName} e.g. ##aboutme
+ *
+ *  Table of Contents
+ *
+ *  00 - defaults & top level
+ *  01 - ##links
+ *  02 - ##navigation
+ *  03 - ##landing
+ *  04 - ##aboutme
+ *  05 - ##portfolio
+ *  06 - ##hobbies
+ *  07 - ##contact
+ */
+
+*{
+  box-sizing: border-box;
+  transition: 1s !important;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#page{
+  width: 100vw;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #eee;
+  transition: 1s;
+  /*delete me*/
+  transform: translateY(-200vh);
+  /*delete me*/
+}
+
+a{
+  text-decoration: none;
+}
+
+a, a:link, a:visited, a:hover, a:active{
+  color: inherit;
+}
+
+
+section{
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: none !important;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5{
+  margin: 0;
+}
+
+.absoluteCenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.container{position: relative;}
+.inlineContainer{display: inline-block;}
+.fastTransition{transition: 0.2s !important;}
+
+.englishBackground{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.englishBackground.japanese{
+  opacity: 0;
+}
+
+.aboutMeBackground{
+  top: 150%;
+  width: 100%;
+  background-color: #ddd;
+}
+
+
+                  /* _      _____ _   _ _  __ _____ 
+                    | |    |_   _| \ | | |/ // ____|
+                    | |      | | |  \| | ' /| (___  
+                    | |      | | | . ` |  <  \___ \ 
+                    | |____ _| |_| |\  | . \ ____) |
+                    |______|_____|_| \_|_|\_\_____/  */
+                                
+                                
+
+/*
+ *   ##links
+ */
+
+.link, 
+.linkJapanese, 
+.linkTop,
+.linkJapaneseTop,
+.linkJapaneseMenu{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.25s;
+  color: white;
+}
+
+.link.blackBar,
+.linkJapanese.blackBar,
+.linkTop.blackBar,
+.linkJapaneseTop.blackBar,
+.linkJapaneseMenu.blackbar{
+  color: black;
+}
+
+.link:hover, 
+.linkJapanese:hover,
+.linkTop:hover,
+.linkTopJapanese:hover,
+.linkJapaneseMenu:hover{
+  color: white;
+}
+
+.link.blackBar:hover, 
+.linkJapanese.blackBar:hover,
+.linkTop.blackBar:hover,
+.linkJapaneseTop.blackBar:hover、
+.linkJapaneseMenu.blackBar:hover{
+  color: black;
+}
+
+.link::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  left: initial;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: #fff;
+  transition: 0.25s;
+}
+
+.linkJapanese::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: initial;
+  right: inital;
+  left: 0;
+  height: 0;
+  width: 3px;
+  background-color: #fff;
+  transition: 0.25s;
+}
+
+.link.blackBar::after,
+.linkJapanese.blackBar::after{
+  background-color: black;
+}
+
+.linkTop::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  left: initial;
+  top: 0;
+  height: 3px;
+  width: 0;
+  background-color: #fff;
+  transition: 0.25s;
+}
+
+.linkJapaneseTop::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: initial;
+  right: 0;
+  height: 0;
+  width: 3px;
+  background-color: #fff;
+  transition: 0.25s;
+}
+
+.linkTop.blackBar::before,
+.linkJapaneseTop.blackBar::before{
+  background-color: black;
+}
+
+.link:hover::after{
+  right: initial;
+  left: 0;
+  width: 100%;
+  transition: 0.25s;
+}
+
+.linkJapanese:hover::after{
+  bottom: initial;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.linkTop:hover::before{
+  right: initial;
+  left: 0;
+  width: 100%;
+  transition: 0.25s;
+}
+
+.linkJapaneseTop:hover::before{
+  bottom: 0;
+  top: initial;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.linkJapaneseMenu::after{
+  content: '';
+  position: absolute;
+  right: initial;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: #fff;
+  transition: 0.25s;
+}
+.link.blackBar::after,
+.linkJapanese.blackBar::after{
+  background-color: black;
+}
+.link:hover::after{
+  right: 0;
+  left: initial;
+  width: 100%;
+  transition: 0.25s;
+}
+
+.alignRight{text-align: right;}
+
+.slideFromLeft{transform: translateX(-100vw);}
+.slideFromRight{transform: translateX(100vw);}
+.slideFromTop{transform: translateY(-100vh);}
+.slideFromBottom{transform: translateY(100vh);}
+
+                  /* _   _     __      _______ _____       _______ _____ ____  _   _ 
+                    | \ | |   /\ \    / /_   _/ ____|   /\|__   __|_   _/ __ \| \ | |
+                    |  \| |  /  \ \  / /  | || |  __   /  \  | |    | || |  | |  \| |
+                    | . ` | / /\ \ \/ /   | || | |_ | / /\ \ | |    | || |  | | . ` |
+                    | |\  |/ ____ \  /   _| || |__| |/ ____ \| |   _| || |__| | |\  |
+                    |_| \_/_/    \_\/   |_____\_____/_/    \_\_|  |_____\____/|_| \_|
+                                                                                    
+                                                                                     */
+
+/*
+ *   ##navigation
+ */
+
+#landing{
+  overflow: inherit;
+}
+
+.buttonMover{
+  visibility: hidden;
+  position: fixed;
+  left: 50%;
+  padding: 15px 50px;
+  transform: translateX(-50%);
+  font-size: 200%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+  color: white;
+}
+
+.buttonBack{
+  top: 0;
+  margin-top: 5px;
+}
+
+.buttonNext{
+  bottom: 0;
+  margin-bottom: 5px;
+}
+
+#buttonBackEnglish.japanese,
+#buttonNextEnglish.japanese{
+  transform: translateX(-100vw);
+}
+
+#buttonBackJapanese,
+#buttonNextJapanese{
+  transform: translateX(100vw);
+}
+
+#buttonBackJapanese.japanese,
+#buttonNextJapanese.japanese{
+  transform: translateX(-50%);
+}
+
+.languageChanger{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 5;
+  writing-mode: vertical-lr;
+  color: white;
+}
+
+.languageChanger p{
+  display: block;
+  padding: 3px;
+  margin: 2px;
+}
+
+#languageChangerEnglish{
+  left: -20%;
+}
+
+#languageChangerEnglish.japanese{
+  left: 0;
+}
+
+#languageChangerJapanese{
+  right: 0;
+}
+
+#languageChangerJapanese.japanese{
+  right: -20%;
+}
+
+.nameWhite{color: white;}
+.nameBlack{color: black;}
+
+.navPanel{
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+}
+.navPanel ul{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.navPanel ul li{
+  transition: 0.2s !important;
+}
+
+#navPanelEnglish{
+  left: 0;
+  transform: translate(-100%,-50%);
+}
+
+#navPanelEnglish.japanese{
+  left: -20%;
+}
+
+#navPanelEnglish.open{
+  transform: translate(0, -50%);
+}
+
+#navPanelEnglish ul li{
+  font-size: 125%;
+}
+
+#navPanelEnglish ul li:hover{
+  padding-left: 20px;
+}
+
+.navPanelButton{
+  writing-mode: vertical-rl;
+}
+
+#navPanelEnglishButton{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translate(100%, -50%);
+  font-size: 125%;
+}
+
+.navPanel.open div .navPanelButton{
+  opacity: 0;
+}
+
+#navPanelJapanese{
+  right: -20%;
+  transform: translate(100%,-50%);
+}
+
+#navPanelJapanese.japanese{
+  right: 0;
+}
+
+#navPanelJapanese.open{
+  transform: translate(0, -50%);
+}
+
+#navPanelJapanese ul {
+  align-items: flex-end;
+}
+
+#navPanelJapanese ul li{
+  font-size: 125%;
+}
+
+#navPanelJapanese ul li:hover{
+  padding-right: 20px;
+}
+
+#navPanelJapaneseButton{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-100%, -50%);
+  font-size: 125%;
+}
+
+                  /* _               _   _ _____ _____ _   _  _____ 
+                    | |        /\   | \ | |  __ \_   _| \ | |/ ____|
+                    | |       /  \  |  \| | |  | || | |  \| | |  __ 
+                    | |      / /\ \ | . ` | |  | || | | . ` | | |_ |
+                    | |____ / ____ \| |\  | |__| || |_| |\  | |__| |
+                    |______/_/    \_\_| \_|_____/_____|_| \_|\_____|
+                                                                    
+                                                                     */
+
+/*
+ *   ##landing
+ */
+
+.svgBackground{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+
+.svgBackground circle{
+  z-index: -1;
+}
+
+#promoshot{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1;
+  will-change: transform, right;
+}
+
+#promoshot.inAbout{transform: translate(0, 100vh)}
+#promoshot.japanese{right: 100%;}
+#promoshot img{height: 100%;}
+#promoshot.japanese img{transform: translateX(100%);}
+
+.welcomeHeading{
+  margin: 0;
+  text-shadow: -3px 3px 3px rgba(0,0,0,0.5);
+}
+
+#welcomeEnglish{
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(0,-50%);
+  font-size: 300%;
+  z-index: 1;
+}
+
+#welcomeEnglish.japanese{
+  left: -100%;
+}
+
+#welcomeJapanese{
+  writing-mode: vertical-rl;
+  position: absolute;
+  height: 80%;
+  top: 50%;
+  right: -100%;
+  transform: translate(50%,-50%);
+  font-size: 200%;
+  z-index: 1;
+}
+
+#welcomeJapanese.japanese{
+  right: 45%;
+}
+
+                            /* ____   ____  _    _ _______   __  __ ______ 
+                         /\   |  _ \ / __ \| |  | |__   __| |  \/  |  ____|
+                        /  \  | |_) | |  | | |  | |  | |    | \  / | |__   
+                       / /\ \ |  _ <| |  | | |  | |  | |    | |\/| |  __|  
+                      / ____ \| |_) | |__| | |__| |  | |    | |  | | |____ 
+                     /_/    \_\____/ \____/ \____/   |_|    |_|  |_|______| */
+                                                       
+                                                       
+
+/*
+ *   ##aboutme
+ */
+
+.backgroundDiv{
+  background-color: #ddd;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.aboutMeText{
+  color: #333;
+  z-index: 2;
+}
+
+#aboutMeTextEnglish{
+  position: absolute;
+  width: 50%;
+  top: 150%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 125%;
+}
+
+#aboutMeTextJapanese{
+  position: absolute;
+  top: 150%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+  writing-mode: vertical-rl;
+  width: 50%;
+  height: 55%;
+  font-size: 150%;
+}
+
+#aboutMeTextJapanese.japanese{
+  left: 50%;
+}
+
+#aboutMeTextEnglish p{
+  text-indent: 2rem;
+}
+
+#aboutMeTextEnglish.japanese{
+  left: -140%;
+}
+
+                  /* _____   ____  _____ _______ ______ ____  _      _____ ____  
+                    |  __ \ / __ \|  __ \__   __|  ____/ __ \| |    |_   _/ __ \ 
+                    | |__) | |  | | |__) | | |  | |__ | |  | | |      | || |  | |
+                    |  ___/| |  | |  _  /  | |  |  __|| |  | | |      | || |  | |
+                    | |    | |__| | | \ \  | |  | |   | |__| | |____ _| || |__| |
+                    |_|     \____/|_|  \_\ |_|  |_|    \____/|______|_____\____/  */
+                                                                                  
+                                                                                  
+
+/*
+ *   ##portfolio
+ */
+
+#portfolio{
+  margin-top: 100vh;
+}
+
+#portfolioContainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.portfolioCard{
+  position: relative;
+  border-radius: 20px;
+  width: 400px;
+  overflow: hidden;
+  height: 225px;
+}
+
+.portfolioCard p{
+  margin: 2px 10px;
+}
+
+.portfolioCardTextContainer{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  transform: translateY(-2rem);
+  background-color: #111;
+}
+
+.portfolioCardTextRelative{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 5px;
+}
+
+.portfolioCardTextContainer:hover{
+  transform:translateY(-99%);
+}
+
+.portfolioCardText p:first-child{
+  margin-bottom: 10px;
+}
+
+.portfolioCardTextEnglish.japanese{display: none;}
+.portfolioCardTextJapanese{display: none;}
+.portfolioCardTextJapanese.japanese{display: inline;}
+
+.portfolioButtons{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 !important;
+}
+
+.portfolioButtons > span{
+  position: relative;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border: 2px solid #fff;
+  border-right: none;
+  padding: 5px;
+  z-index: 1;
+  box-sizing: border-box;
+  background-color: #444;
+  cursor: pointer;
+}
+
+.portfolioButtons span{
+  transition: none !important;
+}
+
+.portfolioButtons span:hover{
+  background-color: white;
+  color: black;
+}
+
+.portfolioButtons > span:first-child:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  border-top: 2px solid #fff;
+  transform: translate(15px, -2px);
+  background-color: #444;
+  z-index: 0;
+}
+
+.portfolioButtons > span:first-child:hover:after{
+  background-color: white;
+}
+
+.portfolioButtons > span:last-child{
+  padding-right: 10px;
+}
+
+.portfolioButtons > span:not(:first-child){
+  /* border-left: none; */
+}
+
+                  /* _    _  ____  ____  ____ _____ ______  _____ 
+                    | |  | |/ __ \|  _ \|  _ \_   _|  ____|/ ____|
+                    | |__| | |  | | |_) | |_) || | | |__  | (___  
+                    |  __  | |  | |  _ <|  _ < | | |  __|  \___ \ 
+                    | |  | | |__| | |_) | |_) || |_| |____ ____) |
+                    |_|  |_|\____/|____/|____/_____|______|_____/  */
+
+
+
+/*
+ *   ##hobbies
+ */
+
+#videoContainer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;  
+}
+
+#videoOverlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAAFklEQVQYV2NkYGD4z8DAwAijQQwUAAA0TQIDnAR3TAAAAABJRU5ErkJggg==);
+}
+
+.hobbiesVerticalLine{
+  margin: 0 auto;
+  height: 0;
+  width: 5px;
+  background-color: white;
+  opacity: 0;
+}
+
+.hobbiesHorizontalLine{
+  margin: 0;
+  height: 5px;
+  width: 0;
+  background-color: white;
+  opacity: 0;
+}
+
+.hobbiesVerticalLineShow{
+  height: 20vh;
+  opacity: 1;
+}
+
+#hobbiesTextEnglish{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 1;
+}
+
+#hobbiesTextEnglish.japanese{
+  transform: translate(-200%, -50%);
+  opacity: 0;
+}
+
+#hobbiesTextJapanese{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, -50%);
+  text-align: center;
+  opacity: 0;
+}
+
+#hobbiesTextJapanese.japanese{
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.hobbiesText p{
+  margin: 0;
+  font-size: 50%;
+  transition: 0.2s !important;
+}
+
+.hobbiesText h1{
+  transition: 0.2s !important;
+}
+
+.hobbiesTextCenter{
+  padding: 30px 60px;
+  padding-bottom: 20px;
+  border: 5px solid white;
+  font-size: 200%;
+  transition: 0.2s !important;
+  cursor: pointer;
+}
+
+.hobbiesMainNode{
+  display: inline-block;
+  padding: 30px 60px;
+  padding-bottom: 20px;
+  font-size: 250%;
+  border: 5px solid white;
+  cursor: pointer;
+  transition: 0.2s !important;
+  border-radius: 50%;
+}
+
+.hobbiesNode:hover{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+.hobbiesNode span{
+  transition: 0.2s !important;
+}
+
+.hobbiesMainRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hobbiesSecondaryNode{
+  display: inline-block;
+  width: 150px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  border: 5px solid white;
+  font-size: 150%;
+  cursor: pointer;
+  transition: 0.2s !important;
+}
+
+.hobbiesSecondaryColumnContainer{
+  position: relative;
+}
+
+.hobbiesSecondaryDummyNode{
+  display: inline-block;
+  width: 150px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  border: 5px solid white;
+  font-size: 150%;
+  visibility: hidden;
+}
+
+.hobbiesSecondaryColumn{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.hobbiesTertiaryDummyNode{
+  display: inline-block;
+  padding: 10px 20px;
+  padding-bottom: 5px;
+  font-size: 100%;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.hobbiesTertiaryNode{
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  padding-bottom: 5px;
+  font-size: 100%;
+  border: 5px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hobbiesTertiaryTextContainer{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  overflow: hidden;
+  color: black;
+  text-align: left;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 0.25s !important;
+  display: none;
+}
+
+.hobbiesTertiaryTextContainer:hover{
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.hobbiesTertiaryText{
+  font-size: 1rem !important;
+}
+
+                   /* _____ ____  _   _ _______       _____ _______ 
+                     / ____/ __ \| \ | |__   __|/\   / ____|__   __|
+                    | |   | |  | |  \| |  | |  /  \ | |       | |   
+                    | |   | |  | | . ` |  | | / /\ \| |       | |   
+                    | |___| |__| | |\  |  | |/ ____ \ |____   | |   
+                     \_____\____/|_| \_|  |_/_/    \_\_____|  |_|    */
+
+/*
+ *   ##contact
+ */
+
+#contact{
+background-color: #333;
+}
+
+.contactFormContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 500px;
+}
+
+label{
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+  font-size: 150%;
+  color: #555;
+  transform: skew(-20deg);
+}
+
+.error{
+  border: solid 2px #d22;
+}
+
+input{
+  display: block;
+  padding-left: 10px;
+  width: 100%;
+  font-size: 150%;
+  outline: none;
+  background-color: #ddd;
+  border: solid 2px #777;
+  transform: skew(-20deg);
+}
+
+input::placeholder{
+  color: #aaa;
+}
+
+textarea{
+  width: 100%;
+  height: 200px;
+  font-size: 150%;
+  border: solid 2px #777;
+  outline: none;
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+textarea::placeholder{
+  color: #aaa;
+}
+
+.formButtonContainer{
+  text-align: right;
+}
+
+.formButton{
+  display: inline-block;
+  background-color: #777;
+  border: solid 2px #ddd;
+  transform: skew(-20deg);
+  padding: 10px;
+  cursor: pointer;
+  transition: none !important;
+}
+
+.formButton:active{
+  background-color: #ddd;
+  border-color: #777;
+  color: #777;
+}
+
+.contactForm{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+}
+
+#contactFormEnglish{
+  transform: translate(-100%, -50%);
+}
+
+#contactFormEnglish.japanese{
+  left: -150%;
+}
+
+#contactFormJapanese{
+  left: initial;
+  right: -100%;
+  transform: translate(0, calc(-50% - 10px));
+}
+
+#contactFormJapanese.japanese{
+  right: 50%;
+  transform: translate(100%, calc(-50% - 10px));
+}
+
+.contactText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  width: 500px;
+  height: 500px;
+  display: grid;
+  padding: 20px;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  color: #333;
+}
+
+.contactText.japanese{
+  transform: translate(-100%, -50%);
+}
+
+#contactTextBox{
+  background-color: #333;
+  margin: 0 20px;
+  font-size: 150%;
+  border-radius: 20px;
+  padding: 18px;
+  color: #ccc;
+}
+
+.contactTextBoxText{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+}
+
+#contactTextBoxEnglish.japanese{
+  opacity: 0;
+}
+
+#contactTextBoxJapanese{
+  opacity: 0;
+  font-size: 115%;
+}
+
+#contactTextBoxJapanese.japanese{
+  opacity: 1;
+}
+
+#contactTextButtons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+}
+
+#contactTextButtons i{
+  font-size: 200px;
+}

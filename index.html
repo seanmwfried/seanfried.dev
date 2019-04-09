@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sean Fried | Front End Developer</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<body>
+  <!-- Nav Buttons -->
+  <div id="buttonBackEnglish" class='buttonMover buttonBack linkTop'>back</div>
+  <div id="buttonNextEnglish" class='buttonMover buttonNext link'>next</div>
+  <div id="buttonBackJapanese" class='buttonMover buttonBack linkTop'></div>
+  <div id="buttonNextJapanese" class='buttonMover buttonNext link'></div>
+  <div class="languageChanger" id='languageChangerEnglish'>
+    <p class='linkJapanese' onclick='toEnglish()'>English</p>
+  </div>
+  <div class="languageChanger" id='languageChangerJapanese'>
+    <p class='linkJapaneseTop' onclick='toJapanese()'>日本語</p>
+  </div>
+  <!-- English Nav Panel -->
+  <div class="navPanel" id="navPanelEnglish">
+    <div class='container'>
+      <p class="navPanelButton linkJapanese" id="navPanelEnglishButton" onclick='toggleMenu()'>Menu</p>
+      <ul>
+        <li class="linkJapaneseMenu" onclick='changeSection(0)'>Home</li>
+        <li class="linkJapaneseMenu" onclick='changeSection(1)'>About Me</li>
+        <li class="linkJapaneseMenu" onclick='changeSection(2)'>Portfolio</li>
+        <li class="linkJapaneseMenu" onclick='changeSection(3)'>Hobbies</li>
+        <li class="linkJapaneseMenu" onclick='changeSection(4)'>Contact</li>
+        <li class="linkJapaneseMenu" onclick='toggleMenu()'>Close Menu</li>
+      </ul>
+    </div>
+  </div>
+  <div class="navPanel" id="navPanelJapanese">
+    <div class='container'>
+      <p class="navPanelButton linkJapaneseTop" id="navPanelJapaneseButton" onclick='toggleMenu()'>メニュー</p>
+      <ul>
+        <li class="link" onclick='changeSection(0)'>ホーム</li>
+        <li class="link" onclick='changeSection(1)'>自己紹介</li>
+        <li class="link" onclick='changeSection(2)'>ポートフォリオ</li>
+        <li class="link" onclick='changeSection(3)'>趣味</li>
+        <li class="link" onclick='changeSection(4)'>連絡</li>
+        <li class="link" onclick='toggleMenu()'>メニューを閉める</li>
+      </ul>
+    </div>
+  </div>
+  <div id='page'>
+    <!-- Landing & About Me-->
+    <section id='landing'>
+      <!-- Promo Shot -->
+      <div id='promoshot'>
+        <img src='media/promoshot.png'>
+      </div>
+      <svg class='svgBackground englishBackground'>
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#111;stop-opacity:1"></stop>
+            <stop id='landingSVGStop' offset="0.8" style="stop-color:#555;stop-opacity:1">
+              <animate id='landingSVGStopAnimation' attributeName="offset" from="0.8" to="0.2" dur="1s" begin="indefinite"></animate>
+            </stop>
+            <stop offset="100%" style="stop-color:#111;stop-opacity:1"></stop>
+          </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" style="fill:url(#grad1);"></rect>
+      </svg>
+      <svg class='svgBackground'>
+        <defs>
+          <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#111;stop-opacity:1"></stop>
+            <stop id='landingSVGStop' offset="0.2" style="stop-color:#555;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:#111;stop-opacity:1"></stop>
+          </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" style="fill:url(#grad2);"></rect>
+      </svg>
+      <div id='welcomeEnglish'>
+        <div class='inlineContainer'>
+          <h2 class='welcomeHeading alignRight slideFromTop'>Helloooooo!</h2>
+          <h1 class='welcomeHeading slideFromRight'>I'm <span class='nameWhite'>Sean Fried</span>!</h1>
+        </div>
+        <div class='alignRight'>
+          <p class='welcomeHeading slideFromLeft'>Thanks for visiting. Stay awhile and listen!</p>
+          <p class='welcomeHeading slideFromBottom link' onclick="toJapanese()">日本語版はこちらへ</p>
+        </div>
+      </div>
+      <div id='welcomeJapanese'>
+        <div class='inlineContainer'>
+          <h2 class='welcomeHeading'>こんにちは～～！</h2>
+          <h1 class='welcomeHeading'><span class='nameWhite'>フリード・ショーン</span>と申します！</h1>
+        </div>
+        <div class='alignRight'>
+          <p class='welcomeHeading'>ご覧頂き、誠にありがとうございます！</p>
+          <p class='welcomeHeading linkJapanese' onclick="toEnglish()">To the English Side.</p>
+        </div>
+      </div>
+    <!-- About Me -->
+      <div class='backgroundDiv'>
+        <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+          <defs>
+            <radialGradient id="grad3">
+                <stop offset="0%" style="stop-color:#777;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#ddd;stop-opacity:1"></stop>
+            </radialGradient>
+          </defs>
+          <circle cx="10%" cy="90%" r="100%" style="fill:url(#grad3);"></circle>
+        </svg>
+      </div>
+      <div class='englishBackground aboutMeBackground'>
+        <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+          <defs>
+            <radialGradient id="grad4">
+                <stop offset="0%" style="stop-color:#777;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#ddd;stop-opacity:1"></stop>
+            </radialGradient>
+          </defs>
+          <circle cx="90%" cy="90%" r="100%" style="fill:url(#grad4);"></circle>
+        </svg>
+      </div>
+      <div id='aboutMeTextEnglish' class='aboutMeText'>
+        <div>
+          <h1>About Me</h1>
+          <p>My name is <span class='nameBlack'>Sean Matthew Wenzel Fried</span>, and I'm 31 years old!</p>
+          <p>I suppose one could say I was introduced to computers was when I was 3 years of age and played Space Harrier 2 for the Sega Genesis for the first time (I beat it the third time I played, by the way, but I was 4 by then. #brag), but the first time I ever sat down in front of a computer and learned the DOS commands to get me to Dig Dug was at the age of 8.</p>
+          <p>I continued to learn about computers throughout my youth, including taking as many computer classes my high school offered. I then proceeded to college to study Business Technology & Networking, with which I currently have an Associates. With school finished, I decided to work in the food industry while focusing on playing music and spent almost a decade touring across the United States performing songs I had written.</p>
+          <p>At the beginning of 2017, I was approached by a friend to build a website for the company for which they worked. I had very limited knowledge at the time, but I knew that I could learn whatever I needed. While working on the project, I realized that I absolutely loved what I was doing, so I started NOLA Web Hosting with a friend to continue working with small, local businesses to provide them with affordable websites and hosting, and so I could continue gaining experience and work towards shifting my career to web development.</p>
+          <p>Now, 2 years later, I am confident in my foundation and am reaching out to bigger and better technologies and opportunities to become a valuable asset to a company through which I can continue to grow. I wholeheartedly appreciate your interest in me and look forward to speaking with you! :]</p>
+        </div>
+      </div>
+      <div id='aboutMeTextJapanese' class='aboutMeText'>
+        <h1>自己紹介</h1>
+        <p>１９８８年３月８日に生まれで<br>３１歳のフリード・ショーンです。</p>
+        <p>セガのマスターシステムはパソコンと言えるか分かりませんが、３歳で初めてスペースハリアー２というゲームをプレイしました。パソコンの前に座って、ディグダグをプレイさせるＤＯＳのコマンドを覚える時は８歳でした。</p>
+        <p>パソコンの勉強は小学校、中学校、高校でも続いてて、大学の専門はネットワークの構築で、準学士を手に入れて卒業しました。<br>卒業後、飲食料品工業に入って、音楽のキャリアを集中しながら１０年間ツアーであったり私が書いた歌を演奏しました。</p>
+        <p>２０１７年の始まりに、友達に友達が働いていた会社のウェブサイトを建てることを頼まれました。その時、プログラミングが出来ませんでしたが、自分で学べると信じました。途中で、プログラミングが好きだと理解が出来ました。もっとプログラミングをしたくて、こんな業界に転業が出来るように、ノーラー・ウェブ・ホスティングと言うホスティングサービス会社を開業しました。</p>
+        <p>２年が過ぎた現在は、自身を持ってて、色々なテクノロジー、フレームワークと、大事な社員に成れて開発者として私の成長が出来る会社に入社することを目指しています。私に興味があって、このウェブサイトをご覧頂き、誠にありがとうございます！宜しくお願いいたします！</p>
+      </div>
+    </section>
+    <section id='portfolio'>
+      <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+        <defs>
+          <radialGradient id="grad5">
+              <stop offset="0%" style="stop-color:#333;stop-opacity:1"></stop>
+              <stop offset="100%" style="stop-color:#111;stop-opacity:1"></stop>
+          </radialGradient>
+        </defs>
+        <circle cx="50%" cy="50%" r="100%" style="fill:url(#grad5);"></circle>
+      </svg>
+      <div id="portfolioContainer">
+        <div class='portfolioCard'>
+          <img src='media/weatherticker.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>Info</span><span class='portfolioCardTextJapanese'>情報</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    Used Technologies
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    使用テクノロジー
+                  </span>
+                  :<br>HTML, CSS, JavaScript, jQuery, Anime.js</p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonView'>
+                    <a href='weatherticker/' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Site
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        サイト
+                      </span>
+                    </a>
+                  </span>
+                  <span class='portfolioButtonSource'>
+                    <a href='https://github.com/seanmwfried/WesternContainerTicker' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Source
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        ソース
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='portfolioCard'>
+          <img src='media/nola.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>Info</span><span class='portfolioCardTextJapanese'>情報</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    Used Technologies
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    使用テクノロジー
+                  </span>
+                  :<br>HTML, Bootstrap, JavaScript, jQuery, PHP</p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonView'>
+                    <a href='https://nolawebhosting.com' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Site
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        サイト
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='portfolioCard'>
+          <img src='media/savethepony.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>Info</span><span class='portfolioCardTextJapanese'>情報</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    Used Technologies
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    使用テクノロジー
+                  </span>
+                  :<br>HTML, LESS, jQuery, TypeScript, AJAX</p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonView'>
+                    <a href='savethepony/' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Site
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        サイト
+                      </span>
+                    </a>
+                  </span>
+                  <span class='portfolioButtonSource'>
+                    <a href='https://github.com/seanmwfried/savethepony' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Source
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        ソース
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='portfolioCard'>
+          <img src='media/devsite.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>Info</span><span class='portfolioCardTextJapanese'>情報</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    Used Technologies
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    使用テクノロジー
+                  </span>
+                  :<br>HTML, CSS, JavaScript, jQuery, PHP</p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonSource'>
+                    <a href='' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Source
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        ソース
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='portfolioCard'>
+          <img src='media/burgerbuilder.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>Info</span><span class='portfolioCardTextJapanese'>情報</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    Used Technologies
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    使用テクノロジー
+                  </span>
+                  :<br>React.js, Redux.js, Axios.js, Firebase</p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonSource'>
+                    <a href='' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Source
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        ソース
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='portfolioCard'>
+          <img src='media/github.jpg'>
+          <div class="portfolioCardTextContainer">
+            <div class='portfolioCardTextRelative'>
+              <div class="portfolioCardText">
+                <p><span class='portfolioCardTextEnglish'>View more on GitHub!</span><span class='portfolioCardTextJapanese'>GitHubでもっと見る事が出来ます！</span></p>
+                <p>
+                  <span class='portfolioCardTextEnglish'>
+                    If you're interested in seeing more source code, this is the place!
+                  </span>
+                  <span class='portfolioCardTextJapanese'>
+                    もっと見たい場合はこちらへ！
+                  </span>
+                </p>
+                <p class='portfolioButtons'>
+                  <span class='portfolioButtonView'>
+                    <a href='' target='_blank'>
+                      <span class='portfolioCardTextEnglish'>
+                        Site
+                      </span>
+                      <span class='portfolioCardTextJapanese'>
+                        サイト
+                      </span>
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id='hobbies'>
+      <div id='videoContainer'>
+        <video autoplay muted loop>
+          <source src='media/hobbiesvideo.mp4' type='video/mp4'>
+            Your browser doesn't support HTML5 videos.
+            Come on, man. It's 2019, get with the times.
+            あなたのブラウザーはHTML5のビデオを見せることが出来ません。
+        </video>
+        <div id='videoOverlay'></div>
+      </div>
+      <div id='hobbiesTextEnglish'>
+        <div id="hobbiesSlidingContainerEnglish">
+          <!-- Abuse overflow and absolute positioning to create chart. -->
+          <!-- If you change font size and things don't line up, check dummy node font size. -->
+          <div class="hobbiesMainRow" id="hobbiesMainRowMusic">
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>Rock</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnRock">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Guitar
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">My father is a bassist, and my mother plays acoustic. I suppose it's only natural that I picked up playing guitar as well. Starting at the age of 12, I've focused mostly on rhythm and songwriting. No shredding here. Most of my guitars have been Schecters, with my current one being a Hellraiser C-1 EX Baritone.</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesMusic" id="hobbiesMusicRock" onclick='showHobbiesTertiaryNodes("Rock")'>Rock</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Singing
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">My mother is a multi-instrumentalist, but her most powerful instrument is definitely her voice. Luckily, a small bit of her talent was passed down to me. I've been singing all my life and starting singing in bands when I was 18 years old.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine"></div>
+            <div class='hobbiesNode hobbiesMainNode' id='hobbiesTextEnglishMusic' onclick='showHobbiesSecondaryNodes("Music")'>MUSIC</div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine"></div>
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>EDM</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnEDM">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Future Bass
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">It's only been a few years since I've started listening to Future Bass, but it's quickly become my favorite EDM genre. From creating tunes to listening to artists, it's something I can't live without now.</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesMusic" id="hobbiesMusicEDM" onclick='showHobbiesTertiaryNodes("EDM")'>EDM</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  FL Studio
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">I started playing around with FL Studio when it was still called Fruityloops. I've used it for everything from writing demos for my bands to creating EDM songs. Currently, I use it most to make Future Bass.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hobbiesVerticalLine hobbiesVerticalLineShow" id='hobbiesVerticalLineMusic'></div>
+          <div class='inlineContainer hobbiesNode hobbiesText hobbiesTextCenter' id='hobbiesTextEnglishCenter' onclick='showHobbiesSecondaryNodes("none")'>
+            <h1>MAIN HOBBIES</h1>
+            <p>Click a node to get started.</p>
+          </div>
+          <div class="hobbiesVerticalLine hobbiesVerticalLineShow" id='hobbiesVerticalLineGames'></div>
+          <div class="hobbiesMainRow" id="hobbiesMainRowGames">
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>PC</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnPC">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  FPS
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">The first serious First Person Shooter I got into was Unreal Tournament in 1999, which I still play games in the series today. Recently, I've been playing things such as Apex Legends, Spellbreak, and Overwatch.</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesGames" id="hobbiesGamesPC" onclick='showHobbiesTertiaryNodes("PC")'>PC</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Others
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">FPS isn't my only love. I have spent many years playing StarCraft 1 and 2, as well as still loving platformers, like Ori and the Blind Forest, and puzzle games, like Antichamber.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine" id='hobbiesHorizontalLinePC'></div>
+            <div class='hobbiesNode hobbiesMainNode' id='hobbiesTextEnglishGames' onclick='showHobbiesSecondaryNodes("Games")'>GAMES</div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine" id='hobbiesHorizontalLineConsole'></div>
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>Console</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnConsole">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Classics
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">Consoles were a major part of my growing up. From my first game of Space Harrier 2, to Mega Man X and The Legend of Zelda. During the era of Halo 1 and Halo 2, I often frequented tournaments as well. I accept every Mario Kart challenge without fear.</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesGames" id="hobbiesGamesConsole" onclick='showHobbiesTertiaryNodes("Console")'>Console</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  Switch
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">In recent years, the only console I've owned is the Nintendo Switch. I can be found still playing Mario Kart with the occasional Splatoon 2 and Smash Brothers.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hobbies in Japanese -->
+      <div id='hobbiesTextJapanese'>
+        <div id="hobbiesSlidingContainerJapanese">
+          <!-- Abuse overflow and absolute positioning to create chart. -->
+          <!-- If you change font size and things don't line up, check dummy node font size. -->
+          <div class="hobbiesMainRow" id="hobbiesMainRowMusic">
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>ロック</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnRock">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  ギータを引く事
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">１２歳の頃にギターを引く事を開始して、リズムと歌を書く事を集中しました。今までのギターはほとんどシェクターと言うブランドのギターで、今の持ってるギターはシェクター・ヘルレイザー・C-1・EX・バリトンです。</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesMusic" id="hobbiesMusicRock" onclick='showHobbiesTertiaryNodes("Rock")'>ロック</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  歌う事
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">私の母は何でもの楽器が出来る人ですが、一番強いのが声です。運がよくに、その才能は少しだけ貰ってくれました。私は子供の頃から歌ってて、バンドで歌う事は１８歳からです。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine"></div>
+            <div class='hobbiesNode hobbiesMainNode' id='hobbiesTextEnglishMusic' onclick='showHobbiesSecondaryNodes("Music")'><span style='white-space: nowrap'>音楽</span></div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine"></div>
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>EDM</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnEDM">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                    <span style='white-space: nowrap'>フューチャーベース</span>
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">最初フューチャーベースを聞いた時は数年前なんですが、早く一番好きなEDMのジャンルに成りました。曲を作る事からアーティストを聞く事まで、私は１つの必要な物に成りました。</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesMusic" id="hobbiesMusicEDM" onclick='showHobbiesTertiaryNodes("EDM")'>EDM</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  FL Studio
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">FL Studioはエフエルスタジオと言います。初めて使った１０年前以上の時にまだFruityloops（フルーティーループス）の名前がしました。バンドのデモからEDMの曲まで作ります。今のよく作るジャンルはフューチャーベースです。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hobbiesVerticalLine hobbiesVerticalLineShow" id='hobbiesVerticalLineMusic'></div>
+          <div class='inlineContainer hobbiesNode hobbiesText hobbiesTextCenter' id='hobbiesTextJapaneseCenter' onclick='showHobbiesSecondaryNodes("none")'>
+            <h1>趣味</h1>
+            <p>ノードをクリックしてください</p>
+          </div>
+          <div class="hobbiesVerticalLine hobbiesVerticalLineShow" id='hobbiesVerticalLineGames'></div>
+          <div class="hobbiesMainRow" id="hobbiesMainRowGames">
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>PC</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnPC">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  FPS
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">FPSはファーストパーソンシューティングと言う意味です。初めてのFPSは１９９９年のアンリアルトーナメントと言うゲームです。まだそのシリーズをプレイしています。最近のプレイするゲームはエイペックスレジェンズやスペルブレーキやオーバーウオッチです。</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesGames" id="hobbiesGamesPC" onclick='showHobbiesTertiaryNodes("PC")'>PC</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  他
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">好きなゲームはFPSだけではなくて、スタークラフトも、オリとくらやみの森も、アンチチェンバーなどが好きです！</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine" id='hobbiesHorizontalLinePC'></div>
+            <div class='hobbiesNode hobbiesMainNode' id='hobbiesTextEnglishGames' onclick='showHobbiesSecondaryNodes("Games")'><span style='white-space: nowrap'>ゲーム</span></div>
+            <div class="hobbiesNode hobbiesSecondary hobbiesHorizontalLine" id='hobbiesHorizontalLineConsole'></div>
+            <div class="hobbiesSecondaryColumnContainer">
+              <!-- Dummy node to make sure everything lines up -->
+              <div class='hobbiesSecondaryDummyNode'>Console</div>
+              <div class="hobbiesSecondaryColumn" id="hobbiesSecondaryColumnConsole">
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  クラシック
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">家庭用ゲーム機は懐かしい事ですね！スペースハリアー２，ロックマンX、ゼルダの伝説を全部プレイしました。ヘイロー１、２の頃によく大会に出て競いました。今までも全部のマリオカートのチャレンジを受けます！</p>
+                  </div>
+                </div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesSecondary hobbiesSecondaryNode hobbiesGames" id="hobbiesGamesConsole" onclick='showHobbiesTertiaryNodes("Console")'>Console</div>
+                <div class="hobbiesVerticalLine"></div>
+                <div class="hobbiesNode hobbiesTertiary hobbiesTertiaryNode">
+                  スイッチ
+                  <div class="hobbiesTertiaryTextContainer">
+                    <p class="hobbiesTertiaryText">近年、家庭用ゲーム機は任天堂スイッチしか持っていないので、マリオカートとスプラトゥーン２と大乱闘スマッシュブラザーズスペシャルをプレイします。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id='contact'>
+      <div class="absoluteCenter">
+        <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+          <defs>
+            <radialGradient id="grad6">
+                <stop offset="0%" style="stop-color:#ddd;stop-opacity:1"></stop>
+                <stop offset="100%" style="stop-color:#333;stop-opacity:1"></stop>
+            </radialGradient>
+          </defs>
+          <circle cx="50%" cy="50%" r="100%" style="fill:url(#grad6);"></circle>
+        </svg>
+      </div>
+      <div class='contactForm' id="contactFormEnglish">
+        <form>
+          <p>
+            <label for='formNameEnglish'>Name</label>
+            <input type='text' id='formNameEnglish' placeholder='John Doe'>
+          </p>
+          <p>
+            <label for='formEmailEnglish'>Email</label>
+            <input type='email' id='formEmailEnglish' placeholder='john@gmail.com'>
+          </p>
+          <p>
+            <label for='formTelEnglish'>Phone Number</label>
+            <input type='tel' id='formTelEnglish' placeholder='+1-123-456-7890'>
+          </p>
+          <p>
+            <label for='formMessageEnglish'>Message</label>
+            <textarea id='formMessageEnglish' placeholder='Hi, Sean! I would like to talk to you about...'></textarea>
+          </p>
+          <p class='formButtonContainer'>
+            <span class='formButton' onclick='sendEmail("English")'>Send</span>
+          </p>
+        </form>
+      </div>
+      <div class="contactText">
+        <div id="contactTextBox">
+          <p class='contactTextBoxText' id='contactTextBoxEnglish'>Thank you from the bottom of my heart for taking the time to check everything out and for having an interest in me. To contact me, use the contact form on the left. You can also click the buttons below to check out my LinkedIn and GitHub!</p>
+          <p class='contactTextBoxText' id='contactTextBoxJapanese'>私のポートフォリオサイトをご覧頂き、心から有難う御座います。右側にあるフォームでご連絡をお待ちしております。以後のボタンでLinkedIn、GitHubをご覧になる事も出来ます。
+          </p>
+          <!-- Hide these to keep size -->
+          <p id='contactTextBoxEnglish' style='visibility: hidden;'>Thank you from the bottom of my heart for taking the time to check everything out and for having an interest in me. To contact me, use the contact form on the left. You can also click the buttons below to check out my LinkedIn and GitHub!
+          </p>
+        </div>
+        <div id="contactTextButtons">
+          <a href='https://www.linkedin.com/in/sean-fried-4ba683171/'><i class="fab fa-linkedin"></i></a>
+          <a href='https://github.com/StarMech'><i class="fab fa-github-square"></i></a>
+        </div>
+      </div>
+      <div class='contactForm' id='contactFormJapanese'>
+        <form>
+          <p>
+            <label for='formNameJapanese'>ご芳名</label>
+            <input type='text' id='formNameJapanese' placeholder='山田太郎'>
+          </p>
+          <p>
+            <label for='formEmailJapanese'>Eメール</label>
+            <input type='email' id='formEmailJapanese' placeholder='何何@gmail.com'>
+          </p>
+          <p>
+            <label for='formTelJapanese'>電話番号</label>
+            <input type='tel' id='formTelJapanese' placeholder='03-1234-5678'>
+          </p>
+          <p>
+            <label for='formMessageJapanese'>メッセージ</label>
+            <textarea id='formMessageJapanese' placeholder='こんにちは！このメッセージは。。。'></textarea>
+          </p>
+          <p class='formButtonContainer'>
+              <span class='formButton' onclick='sendEmail("Japanese")'>送信</span>
+            </p>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
