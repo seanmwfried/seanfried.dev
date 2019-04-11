@@ -56,18 +56,6 @@
       <div id='promoshot'>
         <img src='media/promoshot.png'>
       </div>
-      <svg class='svgBackground englishBackground'>
-        <defs>
-          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#111;stop-opacity:1"></stop>
-            <stop id='landingSVGStop' offset="0.8" style="stop-color:#555;stop-opacity:1">
-              <animate id='landingSVGStopAnimation' attributeName="offset" from="0.8" to="0.2" dur="1s" begin="indefinite"></animate>
-            </stop>
-            <stop offset="100%" style="stop-color:#111;stop-opacity:1"></stop>
-          </linearGradient>
-        </defs>
-        <rect width="100%" height="100%" style="fill:url(#grad1);"></rect>
-      </svg>
       <svg class='svgBackground'>
         <defs>
           <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -77,6 +65,16 @@
           </linearGradient>
         </defs>
         <rect width="100%" height="100%" style="fill:url(#grad2);"></rect>
+      </svg>
+      <svg class='svgBackground englishBackground'>
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#111;stop-opacity:1"></stop>
+            <stop id='landingSVGStop' offset="0.8" style="stop-color:#555;stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:#111;stop-opacity:1"></stop>
+          </linearGradient>
+        </defs>
+        <rect width="100%" height="100%" style="fill:url(#grad1);"></rect>
       </svg>
       <div id='welcomeEnglish'>
         <div class='inlineContainer'>
@@ -99,8 +97,8 @@
         </div>
       </div>
     <!-- About Me -->
-      <div class='backgroundDiv'>
-        <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <div class='backgroundDiv japaneseBackground'>
+        <svg viewBox='0 0 100 100' preserveAspectRatio='none'>
           <defs>
             <radialGradient id="grad3">
                 <stop offset="0%" style="stop-color:#777;stop-opacity:1"></stop>
@@ -110,8 +108,8 @@
           <circle cx="10%" cy="90%" r="100%" style="fill:url(#grad3);"></circle>
         </svg>
       </div>
-      <div class='englishBackground aboutMeBackground'>
-        <svg class='svgBackground' viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <div class='backgroundDiv englishBackground'>
+        <svg viewBox='0 0 100 100' preserveAspectRatio='none'>
           <defs>
             <radialGradient id="grad4">
                 <stop offset="0%" style="stop-color:#777;stop-opacity:1"></stop>
@@ -277,7 +275,7 @@
                   :<br>HTML, CSS, JavaScript, jQuery, PHP</p>
                 <p class='portfolioButtons'>
                   <span class='portfolioButtonSource'>
-                    <a href='' target='_blank'>
+                    <a href='https://github.com/seanmwfried/seanfried.dev' target='_blank'>
                       <span class='portfolioCardTextEnglish'>
                         Source
                       </span>
@@ -307,7 +305,7 @@
                   :<br>React.js, Redux.js, Axios.js, Firebase</p>
                 <p class='portfolioButtons'>
                   <span class='portfolioButtonSource'>
-                    <a href='' target='_blank'>
+                    <a href='https://github.com/seanmwfried/burger-builder-tutorial' target='_blank'>
                       <span class='portfolioCardTextEnglish'>
                         Source
                       </span>
@@ -337,7 +335,7 @@
                 </p>
                 <p class='portfolioButtons'>
                   <span class='portfolioButtonView'>
-                    <a href='' target='_blank'>
+                    <a href='https://github.com/seanmwfried' target='_blank'>
                       <span class='portfolioCardTextEnglish'>
                         Site
                       </span>
@@ -651,5 +649,299 @@
       </div>
     </section>
   </div>
+  <div id="mobilePage">
+    <section id='landingMobile'>
+      <div id='promoshotMobile'>
+        <img src='media/promoshot.png'>
+      </div>
+      <div class='welcomeMobile' id='welcomeEnglishMobile'>
+        <h2 class='welcomeHeading'>Helloooooo!</h2>
+        <h1 class='welcomeHeading'>I'm <span class='nameWhite'>Sean Fried</span>!</h1>
+        <p class='welcomeHeading'>Thanks for visiting.</p>
+        <p class='welcomeHeading'>Stay awhile and listen!</p>
+        <p class='welcomeHeading link' onclick="toJapanese()">日本語版はこちらへ</p>
+      </div>
+      <div class='welcomeMobile' id='welcomeJapaneseMobile'>
+        <h2 class='welcomeHeading'>こんにちは～～！</h2>
+        <h1 class='welcomeHeading'><span class='nameWhite'>フリード・ショーン</span>です！</h1>
+        <p class='welcomeHeading'>ご覧頂き、誠にありがとうございます！</p>
+        <p class='welcomeHeading linkJapanese' onclick="toEnglish()">To the English Side.</p>
+      </div>
+    </section>    
+    <section id="aboutMeMobile">
+      <div class="mobileSectionSVGContainer">
+        <svg height='100%' width='100%' viewBox='0 0 1 1' preserveAspectRatio='none'>
+          <polygon class='mobileSectionSVG' points="0,1 0,1 1,0 1,1">
+            <animate class='mobileSectionSVGToJapanese' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,0 1,1 1,1'></animate>
+            <animate class='mobileSectionSVGToEnglish' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,1 1,0 1,1'></animate>
+          </polygon>
+        </svg>
+      </div>
+      <div class='aboutMeMobileDummyText'>
+        <h1>About Me</h1>
+        <p>My name is <span class='nameBlack'>Sean Matthew Wenzel Fried</span>, and I'm 31 years old!</p>
+        <p>I suppose one could say I was introduced to computers was when I was 3 years of age and played Space Harrier 2 for the Sega Genesis for the first time (I beat it the third time I played, by the way, but I was 4 by then. #brag), but the first time I ever sat down in front of a computer and learned the DOS commands to get me to Dig Dug was at the age of 8.</p>
+        <p>I continued to learn about computers throughout my youth, including taking as many computer classes my high school offered. I then proceeded to college to study Business Technology & Networking, with which I currently have an Associates. With school finished, I decided to work in the food industry while focusing on playing music and spent almost a decade touring across the United States performing songs I had written.</p>
+        <p>At the beginning of 2017, I was approached by a friend to build a website for the company for which they worked. I had very limited knowledge at the time, but I knew that I could learn whatever I needed. While working on the project, I realized that I absolutely loved what I was doing, so I started NOLA Web Hosting with a friend to continue working with small, local businesses to provide them with affordable websites and hosting, and so I could continue gaining experience and work towards shifting my career to web development.</p>
+        <p>Now, 2 years later, I am confident in my foundation and am reaching out to bigger and better technologies and opportunities to become a valuable asset to a company through which I can continue to grow. I wholeheartedly appreciate your interest in me and look forward to speaking with you! :]</p>
+      </div>
+      <div id="aboutMeTextContainerMobile">
+        <div class='aboutMeTextMobile' id="aboutMeTextEnglishMobile">
+          <h1>About Me</h1>
+          <p>My name is <span class='nameBlack'>Sean Matthew Wenzel Fried</span>, and I'm 31 years old!</p>
+          <p>I suppose one could say I was introduced to computers was when I was 3 years of age and played Space Harrier 2 for the Sega Genesis for the first time (I beat it the third time I played, by the way, but I was 4 by then. #brag), but the first time I ever sat down in front of a computer and learned the DOS commands to get me to Dig Dug was at the age of 8.</p>
+          <p>I continued to learn about computers throughout my youth, including taking as many computer classes my high school offered. I then proceeded to college to study Business Technology & Networking, with which I currently have an Associates. With school finished, I decided to work in the food industry while focusing on playing music and spent almost a decade touring across the United States performing songs I had written.</p>
+          <p>At the beginning of 2017, I was approached by a friend to build a website for the company for which they worked. I had very limited knowledge at the time, but I knew that I could learn whatever I needed. While working on the project, I realized that I absolutely loved what I was doing, so I started NOLA Web Hosting with a friend to continue working with small, local businesses to provide them with affordable websites and hosting, and so I could continue gaining experience and work towards shifting my career to web development.</p>
+          <p>Now, 2 years later, I am confident in my foundation and am reaching out to bigger and better technologies and opportunities to become a valuable asset to a company through which I can continue to grow. I wholeheartedly appreciate your interest in me and look forward to speaking with you! :]</p>
+        </div>
+        <div class='aboutMeTextMobile'  id='aboutMeTextJapaneseMobile'>
+          <h1>自己紹介</h1>
+          <p>１９８８年３月８日に生まれで<br>３１歳のフリード・ショーンです。</p>
+          <p>セガのマスターシステムはパソコンと言えるか分かりませんが、３歳で初めてスペースハリアー２というゲームをプレイしました。パソコンの前に座って、ディグダグをプレイさせるＤＯＳのコマンドを覚える時は８歳でした。</p>
+          <p>パソコンの勉強は小学校、中学校、高校でも続いてて、大学の専門はネットワークの構築で、準学士を手に入れて卒業しました。卒業後、飲食料品工業に入って、音楽のキャリアを集中しながら１０年間ツアーであったり私が書いた歌を演奏しました。</p>
+          <p>２０１７年の始まりに、友達に友達が働いていた会社のウェブサイトを建てることを頼まれました。その時、プログラミングが出来ませんでしたが、自分で学べると信じました。途中で、プログラミングが好きだと理解が出来ました。もっとプログラミングをしたくて、こんな業界に転業が出来るように、ノーラー・ウェブ・ホスティングと言うホスティングサービス会社を開業しました。</p>
+          <p>２年が過ぎた現在は、自身を持ってて、色々なテクノロジー、フレームワークと、大事な社員に成れて開発者として私の成長が出来る会社に入社することを目指しています。私に興味があって、このウェブサイトをご覧頂き、誠にありがとうございます！宜しくお願いいたします！</p>
+        </div>
+      </div>
+    </section>
+    <section id="portfolioMobile">
+      <div class="mobileSectionSVGContainer">
+        <svg height='100%' width='100%' viewBox='0 0 1 1' preserveAspectRatio='none'>
+          <polygon class='mobileSectionSVG' points="0,1 0,1 1,0 1,1">
+            <animate class='mobileSectionSVGToJapanese' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,0 1,1 1,1'></animate>
+            <animate class='mobileSectionSVGToEnglish' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,1 1,0 1,1'></animate>
+          </polygon>
+        </svg>
+      </div>
+      <div class="portfolioContainerMobile">
+        <h1>Portfolio</h1>
+        <h1>ポートフォリオ</h1>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/weatherticker.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>Used Technologies:</p>
+            <p>使用テクノロジー:</p>
+          </div>
+          <p>HTML, CSS, JavaScript, jQuery, Anime.js</p>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='weatherticker/' target='_blank'><span class="portfolioCardButtonMobile">Site</span></a>
+              <a href='https://github.com/seanmwfried/WesternContainerTicker' target='_blank'><span class="portfolioCardButtonMobile">Source</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='weatherticker/' target='_blank'><span class="portfolioCardButtonMobile">サイト</span></a>
+              <a href='https://github.com/seanmwfried/WesternContainerTicker' target='_blank'><span class="portfolioCardButtonMobile">ソース</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/nola.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>Used Technologies:</p>
+            <p>使用テクノロジー:</p>
+          </div>
+          <p>HTML, Bootstrap, JavaScript, jQuery, PHP</p>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://nolawebhosting.com' target='_blank'><span class="portfolioCardButtonMobile">Site</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://nolawebhosting.com' target='_blank'><span class="portfolioCardButtonMobile">サイト</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/savethepony.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>Used Technologies:</p>
+            <p>使用テクノロジー:</p>
+          </div>
+          <p>HTML, LESS, jQuery, TypeScript, AJAX</p>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='savethepony/' target='_blank'><span class="portfolioCardButtonMobile">Site</span></a>
+              <a href='https://github.com/seanmwfried/savethepony' target='_blank'><span class="portfolioCardButtonMobile">Source</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='savethepony/' target='_blank'><span class="portfolioCardButtonMobile">サイト</span></a>
+              <a href='https://github.com/seanmwfried/savethepony' target='_blank'><span class="portfolioCardButtonMobile">ソース</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/devsite.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>Used Technologies:</p>
+            <p>使用テクノロジー:</p>
+          </div>
+          <p>HTML, CSS, JavaScript, jQuery, PHP</p>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried/seanfried.dev' target='_blank'><span class="portfolioCardButtonMobile">Source</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried/seanfried.dev' target='_blank'><span class="portfolioCardButtonMobile">ソース</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/burgerbuilder.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>Used Technologies:</p>
+            <p>使用テクノロジー:</p>
+          </div>
+          <p>React.js, Redux.js, Axios.js, Firebase</p>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried/burger-builder-tutorial' target='_blank'><span class="portfolioCardButtonMobile">Source</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried/burger-builder-tutorial' target='_blank'><span class="portfolioCardButtonMobile">ソース</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolioCardMobile">
+        <img src='media/github.jpg'>
+        <div class="portfolioCardMiddleMobile">
+          <div class="portfolioContainerMobile">
+            <p>If you're interested in seeing more source code, this is the place!</p>
+            <p>もっと見たい場合はこちらへ！</p>
+          </div>
+        </div>
+        <div class="portfolioCardBottomMobile">
+          <div class="portfolioContainerMobile">
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried' target='_blank'><span class="portfolioCardButtonMobile">Site</span></a>
+            </div>
+            <div class="portfolioButtonContainerMobile">
+              <a href='https://github.com/seanmwfried' target='_blank'><span class="portfolioCardButtonMobile">サイト</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contactMobile">
+      <div class="mobileSectionSVGContainer">
+        <svg height='100%' width='100%' viewBox='0 0 1 1' preserveAspectRatio='none'>
+          <polygon class='mobileSectionSVG' points="0,1 0,1 1,0 1,1">
+            <animate class='mobileSectionSVGToJapanese' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,0 1,1 1,1'></animate>
+            <animate class='mobileSectionSVGToEnglish' begin='indefinite' fill='freeze' attributeName='points' dur='1s' to='0,1 0,1 1,0 1,1'></animate>
+          </polygon>
+        </svg>
+      </div>
+      <div id="contactMobilePadder">
+        <div class="contactRestrainer">
+          <div class="contactContainerMobile">
+            <h1>Contact</h1>
+            <h1>連絡</h1>
+          </div>
+        </div>
+        <div class="contactRestrainer">        
+          <div class="contactTextMobile">
+            <div class="contactContainerMobile">
+              <p>Thank you from the bottom of my heart for taking the time to check everything out and for having an interest in me. To contact me, use the contact form on the left. You can also click the buttons below to check out my LinkedIn and GitHub!</p>
+              <p>私のポートフォリオサイトをご覧頂き、心から有難う御座います。右側にあるフォームでご連絡をお待ちしております。以後のボタンでLinkedIn、GitHubをご覧になる事も出来ます。</p>
+            </div>
+            <div id="contactTextButtonsMobile">
+              <a href='https://www.linkedin.com/in/sean-fried-4ba683171/'><i class="fab fa-linkedin"></i></a>
+              <a href='https://github.com/StarMech'><i class="fab fa-github-square"></i></a>
+            </div>
+          </div>
+        </div>
+        <div id='contactFormMobile'>
+          <form>
+            <p>
+              <label class='formMobileLabel' for='formNameMobile'>
+                <div class="contactRestrainer">                
+                  <div class="contactContainerMobile">
+                    <p>
+                      Name
+                    </p>
+                    <p>
+                      ご芳名
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type='text' id='formNameMobile'>
+            </p>
+            <p>
+              <label class='formMobileLabel' for='formEmailMobile'>
+                <div class="contactRestrainer">                
+                  <div class="contactContainerMobile">
+                    <p>
+                      Email
+                    </p>
+                    <p>
+                      Eメール
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type='email' id='formEmailMobile'>
+            </p>
+            <p>
+              <label class='formMobileLabel' for='formTelMobile'>
+                <div class="contactRestrainer">                
+                  <div class="contactContainerMobile">
+                    <p>
+                      Phone
+                    </p>
+                    <p>
+                      電話番号
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type='tel' id='formTelMobile'>
+            </p>
+            <p>
+              <label class='formMobileLabel' for='formMessageMobile'>
+                <div class="contactRestrainer">                
+                  <div class="contactContainerMobile">
+                    <p>
+                      Message
+                    </p>
+                    <p>
+                      メッセージ
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <textarea id='formMessageMobile'></textarea>
+            </p>
+            <p class='contactRestrainer'>
+              <div class='formButtonMobile' onclick='sendEmail("Mobile")'>
+                <div class="contactContainerMobile formButtonContainer">
+                    <span>Send</span>
+                    <span>送信</span>
+                </div>
+              </div>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
 </body>
 </html>

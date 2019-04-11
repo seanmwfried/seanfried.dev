@@ -32,7 +32,7 @@ html, body{
   color: #eee;
   transition: 1s;
   /*delete me*/
-  transform: translateY(-200vh);
+  /* transform: translateY(-100vh); */
   /*delete me*/
 }
 
@@ -71,23 +71,9 @@ h1, h2, h3, h4, h5{
 .inlineContainer{display: inline-block;}
 .fastTransition{transition: 0.2s !important;}
 
-.englishBackground{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.englishBackground.japanese{
-  opacity: 0;
-}
-
-.aboutMeBackground{
-  top: 150%;
-  width: 100%;
-  background-color: #ddd;
-}
-
+.japaneseBackground{opacity: 0;}
+.japaneseBackground.japanese{opacity: 1;}
+.englishBackground.japanese{opacity: 0;}
 
                   /* _      _____ _   _ _  __ _____ 
                     | |    |_   _| \ | | |/ // ____|
@@ -446,13 +432,11 @@ h1, h2, h3, h4, h5{
  */
 
 .svgBackground{
-  height: 100%;
-  width: 100%;
-  transition: 1s;
-}
-
-.svgBackground circle{
-  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 #promoshot{
@@ -461,7 +445,6 @@ h1, h2, h3, h4, h5{
   right: 0;
   height: 100vh;
   z-index: 1;
-  will-change: transform, right;
 }
 
 #promoshot.inAbout{transform: translate(0, 100vh)}
@@ -502,6 +485,27 @@ h1, h2, h3, h4, h5{
   right: 45%;
 }
 
+@media (max-width: 1400px){
+  #welcomeEnglish{
+    left: 15%;
+  }
+}
+
+@media (max-width: 1200px){
+  #welcomeEnglish{
+    left: 25%;
+    transform: translate(0,-50%);
+    font-size: 200%;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 1000px){
+  #welcomeEnglish{
+    left: 15%;
+  }
+}
+
                             /* ____   ____  _    _ _______   __  __ ______ 
                          /\   |  _ \ / __ \| |  | |__   __| |  \/  |  ____|
                         /  \  | |_) | |  | | |  | |  | |    | \  / | |__   
@@ -520,9 +524,19 @@ h1, h2, h3, h4, h5{
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
+}
+
+.aboutMeBackground{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;  
+  background-color: #ddd;
 }
 
 .aboutMeText{
@@ -560,6 +574,59 @@ h1, h2, h3, h4, h5{
 
 #aboutMeTextEnglish.japanese{
   left: -140%;
+}
+
+@media (max-width: 1700px){
+  #aboutMeTextJapanese.japanese{
+    left: 70%;
+  }
+}
+
+@media (max-width: 1650px){
+  #aboutMeTextEnglish{
+    left: 30%;
+  }
+}
+
+@media (max-width: 1450px){
+  #aboutMeTextJapanese.japanese{
+    left: initial;
+    right: 15%;
+    transform: translateY(-50%);
+    font-size: initial;
+  }
+}
+
+@media (max-width: 1300px){
+  #aboutMeTextEnglish{
+    font-size: initial;
+    width: 30%;
+  }
+}
+
+@media (max-width: 1200px){
+  #aboutMeTextJapanese.japanese{
+    right: 5%;
+  }
+}
+
+@media (max-width: 1100px){
+  #aboutMeTextEnglish{
+    left: 5%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1050px){
+  #aboutMeTextJapanese.japanese{
+    width: auto;
+    padding: 30px;
+    height: 70%;
+    background-color: #ccc;
+    box-sizing: border-box;
+    border: 2px solid #111;
+    border-radius: 20px;
+  }
 }
 
                   /* _____   ____  _____ _______ ______ ____  _      _____ ____  
@@ -680,8 +747,10 @@ h1, h2, h3, h4, h5{
   padding-right: 10px;
 }
 
-.portfolioButtons > span:not(:first-child){
-  /* border-left: none; */
+@media (max-width: 1400px){
+  #portfolioContainer{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
                   /* _    _  ____  ____  ____ _____ ______  _____ 
@@ -722,7 +791,7 @@ video{
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAYAAAB/qH1jAAAAFklEQVQYV2NkYGD4z8DAwAijQQwUAAA0TQIDnAR3TAAAAABJRU5ErkJggg==);
+  background-color: rgba(0,0,0,0.25);
 }
 
 .hobbiesVerticalLine{
@@ -1080,4 +1149,332 @@ textarea::placeholder{
 
 #contactTextButtons i{
   font-size: 200px;
+}
+
+@media (max-width: 1200px){
+  .contactForm{
+    width: 300px;
+  }
+}
+
+@media (max-width: 1000px){
+  #contactFormEnglish{
+    transform: translate(-110%, -50%);
+  }
+  #contactFormJapanese.japanese{
+    transform: translate(120%, calc(-50% - 10px));
+  }
+  .contactText{
+    transform: translate(-10%, -50%);
+  }
+  .contactText.japanese{
+    transform: translate(-85%, -50%);
+  }
+}
+
+                  /* __  __    ____    ____    _____   _        ______ 
+                    |  \/  |  / __ \  |  _ \  |_   _| | |      |  ____|
+                    | \  / | | |  | | | |_) |   | |   | |      | |__   
+                    | |\/| | | |  | | |  _ <    | |   | |      |  __|  
+                    | |  | | | |__| | | |_) |  _| |_  | |____  | |____ 
+                    |_|  |_|  \____/  |____/  |_____| |______| |______| */
+
+@media (max-width: 800px){
+  html, body{overflow-y: auto;}
+  #page{display: none;}
+  #mobilePage{display: initial;}
+  section{
+    display: block;
+    position: relative;
+    margin: initial;
+    height: initial;
+    width: initial;
+    overflow: initial;
+  }
+  .navPanel,
+  .buttonMover{
+    display: none;
+  }
+  .languageChanger{
+    position: fixed;
+    top: 15px;
+    transform: none;
+    background-color: #111;
+    border: 1px solid white;
+  }
+  #languageChangerJapanese{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+  }
+  #languageChangerEnglish{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: none;
+  }
+  #languageChangerJapanese p{
+    margin: 0;
+    padding-right: 0;
+  }
+}
+
+#mobilePage{
+  font-family: 'Josefin Sans', sans-serif;
+  color: #eee;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@media (min-width: 650px){
+  #mobilePage{
+    font-size: 140%;
+  }
+}
+
+.mobileSectionSVGContainer{
+  position: absolute;
+  top: 0;
+  transform: translateY(-99%);
+  height: 20px;
+  width: 100%;
+}
+
+/* Landing */
+
+#landingMobile{
+  background-color: #111;
+  height: 80vh;
+  width: 100vw;
+}
+
+#promoshotMobile{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media (max-height: 750px){
+  #promoshotMobile{height: 100%;}
+  #promoshotMobile img{height: 100%;}
+}
+
+.welcomeMobile{
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 150%;
+}
+
+#welcomeEnglishMobile{  
+  left: 50%;
+}
+
+#welcomeEnglishMobile.japanese{
+  left: -150%;
+}
+
+#welcomeJapaneseMobile{
+  right: -150%;
+}
+
+#welcomeJapaneseMobile.japanese{
+  right: -50%;
+}
+
+/* About Me */
+
+#aboutMeMobile{
+  background-color: #eee;
+}
+
+#aboutMeMobile .mobileSectionSVG{
+  fill: #eee;
+}
+
+#aboutMeTextContainerMobile{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200vw;
+  text-align: justify;
+}
+
+#aboutMeTextContainerMobile.japanese{
+  transform: translateX(-50%);
+}
+
+.aboutMeMobileDummyText{
+  padding: 25px;
+  visibility: hidden;
+}
+.aboutMeTextMobile{
+  padding: 25px;
+  color: #333;
+}
+
+#aboutMeTextEnglishMobile p{
+  text-indent: 20px;
+}
+
+#aboutMeTextJapaneseMobile{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+/* Portfolio */
+
+#portfolioMobile .mobileSectionSVG{
+  fill:#333;
+}
+
+#portfolioMobile{
+  padding: 30px 0;
+  background-color: #333;
+}
+
+.portfolioContainerMobile{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200%;
+  text-align: center;
+  grid-gap: 0;
+}
+
+.portfolioContainerMobile.japanese{
+  transform: translateX(-50%);
+}
+
+.portfolioContainerMobile h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.portfolioCardMobile{
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.portfolioCardMobile img{
+  display: block;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.portfolioCardMiddleMobile{
+  margin: 0 auto;
+  background-color: #111;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.portfolioCardMobile p{
+  margin: 0;
+}
+
+.portfolioCardBottomMobile{
+  overflow: hidden;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #444;
+}
+
+.portfolioButtonContainerMobile{
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+}
+
+.portfolioButtonContainerMobile a{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-top-style: 2px solid white;
+}
+
+.portfolioButtonContainerMobile a:last-child:not(:only-child){
+  border-left: 1px solid #333;
+}
+
+/* Contact */
+
+#contactMobile{
+  background-color: #ddd;
+  color: #333;
+  box-sizing: border-box;
+}
+
+#contactMobilePadder{
+  padding: 20px;
+}
+
+#contactMobile .mobileSectionSVG{
+  fill:#ddd;
+}
+
+#contactMobile .mobileSectionSVGContainer{
+  top: 0.5px;
+}
+
+#contactMobile h1{
+  text-align: center;
+}
+
+.contactRestrainer{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contactContainerMobile{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 200%;
+}
+
+.contactContainerMobile.japanese{
+  transform: translateX(-50%);
+}
+
+#contactTextButtonsMobile{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#contactTextButtonsMobile i{
+  font-size: 100px;
+}
+
+@media (min-width: 600px){
+  #contactTextButtonsMobile i{
+    font-size: 200px;
+  }
+}
+
+.formButtonMobile{
+  display: block;
+  color: white;
+  background-color: #777;
+  border: solid 2px #ddd;
+  transform: skew(-20deg);
+  padding: 10px;
+  cursor: pointer;
+  transition: none !important;
+}
+
+.formButtonContainer{
+  overflow: hidden;
+  text-align: center;
 }

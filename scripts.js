@@ -38,6 +38,12 @@ function toJapanese(){
 
   //Reset hobbies
   resetHobbies();
+
+  //Morph mobile SVGs
+  $('.mobileSectionSVGToJapanese').each(function(){
+    console.log(this);
+    this.beginElement();
+  });
 }
 
 function toEnglish(){
@@ -45,6 +51,11 @@ function toEnglish(){
   
   //Reset hobbies
   resetHobbies();
+
+  //Morph mobile SVGs
+  $('.mobileSectionSVGToEnglish').each(function(){
+    this.beginElement();
+  });
 }
 
 function changeNavColor(){
