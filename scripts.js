@@ -80,7 +80,7 @@ function showNavButtons(){
       $('#buttonNextEnglish').text('enter').css('opacity','1');
       $('#buttonNextJapanese').text('開始').css('opacity','1');
       break;
-    case currentSection <= $('section').length - 1:
+    case currentSection <= $('section[section=\'desktop\'').length - 1:
       $('.buttonNext').css('visibility', 'visible');
       $('#buttonNextEnglish').text('next').css('opacity','1');
       $('#buttonNextJapanese').text('進む').css('opacity','1');
@@ -97,7 +97,7 @@ function showNavButtons(){
 
 function changeSection(newSection){
   //He protec
-  if(newSection < 0 || newSection > $('section').length)
+  if(newSection < 0 || newSection > $('section[section=\'desktop\'').length)
     return;
   
   currentSection = newSection;
